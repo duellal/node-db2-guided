@@ -5,16 +5,23 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "ketchup": "git fetch && git reset --hard origin/lecture"
+    "ketchup": "git fetch && git reset --hard origin/lecture",
+    "up": "knex migrate:up",
+    "latest": "knex migrate:latest",
+    "down": "knex migrate:down",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "resetdb": "npm run rollback && npm run latest && npm run seed"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bloominstituteoftechnology/node-db2-guided.git"
   },
   "dependencies": {
-    "sqlite3": "^5.0.8",
+    "eslint": "^8.30.0",
     "express": "^4.17.3",
-    "knex": "^2.0.0"
+    "knex": "^2.0.0",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
